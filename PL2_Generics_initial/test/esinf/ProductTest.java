@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
  */
 public class ProductTest {
     
-    public ProductTest() {
+   public ProductTest() {
     }
 
 
@@ -41,7 +41,7 @@ public class ProductTest {
         boolean expResult = true;
         boolean result = instance.equals(obj);
         assertEquals(expResult, result);
-    }    
+    }
 
     /**
      * Test of hashCode method, of class Product.
@@ -66,7 +66,7 @@ public class ProductTest {
         int result = instance.compareTo(o);
         assertTrue(result<0);
 
-    }        
+    }
     /**
      * Test of compareTo method, of class Product.
      */
@@ -78,7 +78,7 @@ public class ProductTest {
         int result = instance.compareTo(o);
         assertTrue(result>0);
 
-    }    
+    }
     /**
      * Test of compareTo method, of class Product.
      */
@@ -92,5 +92,4 @@ public class ProductTest {
         assertEquals(expResult, result);
 
     }
-    
 }

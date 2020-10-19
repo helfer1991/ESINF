@@ -36,7 +36,7 @@ public class Supermarket {
             }
         }
         for(Invoice name: m.keySet()){
-            String key =name.toString();
+            String key = name.toString();
             String value = m.get(name).toString();
             System.out.println(key + " " + value);
         }

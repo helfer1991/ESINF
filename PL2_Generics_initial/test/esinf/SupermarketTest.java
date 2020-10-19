@@ -20,22 +20,22 @@ import static org.junit.Assert.*;
  */
 public class SupermarketTest {
     private Supermarket instance;
-    
+
     public SupermarketTest() throws IOException, Exception {
         instance = new Supermarket();
         List<String> l = Files.lines(Paths.get("invoices.txt")).collect(Collectors.toList());
-        instance.getInvoices(l);        
+        instance.getInvoices(l);
     }
 
     @Test
     public void testNumberOfProductsPerInvoice() throws IOException {
-        System.out.println("numberOfProductsPerInvoice");        
+        System.out.println("numberOfProductsPerInvoice");
         Map<Invoice,Integer> result = new HashMap<>();
         result.put(new Invoice("INV001"),3);
         result.put(new Invoice("INV002"),3);
         result.put(new Invoice("INV003"),4);
         result.put(new Invoice("INV004"),4);
-        
+
         Map<Invoice,Integer> expResult = instance.numberOfProductsPerInvoice();
         assertEquals(expResult, result);
     }
@@ -46,9 +46,9 @@ public class SupermarketTest {
         LocalDate d1 = LocalDate.of(2016, 9, 10);
         LocalDate d2 = LocalDate.of(2016, 9, 13);
         Set<Invoice> result = instance.betweenDates(d1, d2);
-        
+
         assertTrue(result.remove(new Invoice("INV002")));
-        assertTrue(result.remove(new Invoice("INV003")));            
+        assertTrue(result.remove(new Invoice("INV003")));
         assertTrue(result.isEmpty());
     }
 
@@ -69,22 +69,22 @@ public class SupermarketTest {
         assertTrue(r.contains(new Invoice("INV004",null)));
         r = result.get("APPLE");
         assertTrue(r.contains(new Invoice("INV001",null)));
-        assertTrue(r.contains(new Invoice("INV003",null)));                
+        assertTrue(r.contains(new Invoice("INV003",null)));
         assertTrue(r.contains(new Invoice("INV004",null)));
         r = result.get("PEAR");
         assertTrue(r.contains(new Invoice("INV002",null)));
-        assertTrue(r.contains(new Invoice("INV003",null)));                
+        assertTrue(r.contains(new Invoice("INV003",null)));
         r = result.get("EGG");
         assertTrue(r.contains(new Invoice("INV001",null)));
-        assertTrue(r.contains(new Invoice("INV002",null)));                
+        assertTrue(r.contains(new Invoice("INV002",null)));
         r = result.get("BUTTER");
         assertTrue(r.contains(new Invoice("INV001",null)));
-        assertTrue(r.contains(new Invoice("INV003",null)));                
+        assertTrue(r.contains(new Invoice("INV003",null)));
         assertTrue(r.contains(new Invoice("INV004",null)));
         r = result.get("CHIPS");
         assertTrue(r.contains(new Invoice("INV002",null)));
-        assertTrue(r.contains(new Invoice("INV003",null)));                
+        assertTrue(r.contains(new Invoice("INV003",null)));
         r = result.get("PINEAPPLE");
         assertTrue(r.contains(new Invoice("INV004",null)));
-    }    
+    }
 }

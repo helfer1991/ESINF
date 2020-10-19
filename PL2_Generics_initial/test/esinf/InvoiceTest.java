@@ -76,7 +76,7 @@ public class InvoiceTest {
         Invoice instance = new Invoice("Invoice001","2011/9/10");
         int result = instance.compareTo(o);
         assertTrue(result<0);
-    }    
+    }
     /**
      * Test of compareTo method, of class Invoice.
      */
@@ -87,6 +87,6 @@ public class InvoiceTest {
         Invoice instance = new Invoice("Invoice001","2016/9/10");
         int result = instance.compareTo(o);
         assertTrue(result==0);
-    }        
+    }
     
 }
